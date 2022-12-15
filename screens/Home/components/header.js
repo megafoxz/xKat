@@ -13,7 +13,7 @@ export default function header({navigation}) {
     <View style={headerStyle.rowHeader}>
       <icons.Entypo
         name="dots-three-vertical"
-        size={30}
+        size={25}
         style={headerStyle.iconNoti}></icons.Entypo>
       <View style={headerStyle.rowHeaderRight}>
         <View>

@@ -13,6 +13,8 @@ export const COLORS = {
   lightGray3: '#EFEFF1',
   lightGray4: '#F8F8F9',
   lightGray5: '#eaeaea',
+
+  red: '#FF2743',
 };
 
 export const SIZES = {

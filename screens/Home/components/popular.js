@@ -1,36 +1,41 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, TouchableOpacity, View, Text, Image} from 'react-native';
+//Component
 import ScalableText from 'react-native-text';
+import {View} from 'react-native';
+import ListSong from '../../../components/common/listSongCard';
 
 //Style
-import {headerStyle} from './styles';
+import {popularStyle} from './styles';
 import {icons} from '../../../constants';
 
-export default function header({navigation}) {
+//Dump data
+import {popularData} from '../../../dump/popular';
+
+export default function popular({navigation}) {
   useEffect(() => {}, []);
 
   return (
-    <View style={headerStyle.rowHeader}>
-      <icons.Entypo
-        name="dots-three-vertical"
-        size={30}
-        style={headerStyle.iconNoti}></icons.Entypo>
-      <View style={headerStyle.rowHeaderRight}>
-        <View>
-          <ScalableText adjustsFontSizeToFit style={headerStyle.headerTitle}>
-            Hello, Yana
+    // Title
+    <>
+      <View style={popularStyle.rowHeader}>
+        <View style={popularStyle.rowHeaderLeft}>
+          <ScalableText adjustsFontSizeToFit style={popularStyle.headerTitle}>
+            most
           </ScalableText>
-          <ScalableText adjustsFontSizeToFit style={headerStyle.headerSubtitle}>
-            New York
+          <ScalableText adjustsFontSizeToFit style={popularStyle.headerTitle}>
+            popular
           </ScalableText>
         </View>
-        <View>
-          <icons.AntDesign
-            name="bells"
-            size={25}
-            style={headerStyle.iconBell}></icons.AntDesign>
-        </View>
+        <ScalableText adjustsFontSizeToFit style={popularStyle.headerSubtitle}>
+          960 playlists
+        </ScalableText>
       </View>
-    </View>
+      {/* Start Horizontal card */}
+      <View style={popularStyle.rowPopular}>
+        <ListSong />
+      </View>
+
+      {/* End Horizontal card */}
+    </>
   );
 }

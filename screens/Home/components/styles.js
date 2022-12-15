@@ -1,7 +1,7 @@
 import {COLORS} from '../../../constants';
 import {StyleSheet} from 'react-native';
 
-export const headerStyle = StyleSheet.create({
+const headerStyle = StyleSheet.create({
   rowHeader: {
     display: 'flex',
     flexDirection: 'row',
@@ -19,7 +19,35 @@ export const headerStyle = StyleSheet.create({
   headerTitle: {
     color: COLORS.white,
     fontWeight: 'bold',
-    fontSize: 18,
+    fontSize: 15,
+  },
+  headerSubtitle: {
+    color: COLORS.lightGray,
+    fontSize: 10,
+  },
+  iconNoti: {
+    color: COLORS.white,
+  },
+  iconBell: {
+    marginLeft: 25,
+    color: COLORS.white,
+  },
+});
+
+const popularStyle = StyleSheet.create({
+  rowHeader: {
+    display: 'flex',
+    flexDirection: 'column',
+    marginTop: 30,
+    paddingLeft: 20,
+  },
+  rowHeaderLeft: {
+    marginBottom: 10,
+  },
+  headerTitle: {
+    color: COLORS.white,
+    fontWeight: '800',
+    fontSize: 40,
   },
   headerSubtitle: {
     color: COLORS.lightGray,
@@ -32,4 +60,9 @@ export const headerStyle = StyleSheet.create({
     marginLeft: 25,
     color: COLORS.white,
   },
+  rowPopular: {
+    paddingLeft: 10,
+  },
 });
+
+export {headerStyle, popularStyle};

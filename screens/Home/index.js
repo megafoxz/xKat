@@ -7,6 +7,7 @@ import {FlatList} from 'native-base';
 
 // Component
 import Header from './components/header';
+import Popular from './components/popular';
 
 //Style
 import {styles} from './styles';
@@ -31,6 +32,7 @@ export default function Screen({navigation}) {
       <SafeAreaView style={styles.container}>
         <ScrollView>
           <Header navigation={navigation} />
+          <Popular navigation={navigation} />
         </ScrollView>
       </SafeAreaView>
     );
