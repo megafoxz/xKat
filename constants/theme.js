@@ -8,11 +8,8 @@ export const COLORS = {
   black: '#1E1F20',
   white: '#FFFFFF',
 
-  lightGray: '#F5F5F6',
-  lightGray2: '#F6F6F7',
-  lightGray3: '#EFEFF1',
-  lightGray4: '#F8F8F9',
-  lightGray5: '#eaeaea',
+  gray: '#ABB7B7',
+  lynch: '#6C7A89',
 
   red: '#FF2743',
 };

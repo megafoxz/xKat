@@ -8,6 +8,8 @@ import {FlatList} from 'native-base';
 // Component
 import Header from './components/header';
 import Popular from './components/popular';
+import ListTrack from './components/listTrack';
+import ListNewTrack from './components/listNewTrack';
 
 //Style
 import {styles} from './styles';
@@ -18,10 +20,6 @@ export default function Screen({navigation}) {
   });
 
   useEffect(() => {
-    async function getDefaultPage() {
-      console.log(value.activeName);
-    }
-    getDefaultPage();
     return () => {
       setValue('Home');
     };
@@ -33,6 +31,8 @@ export default function Screen({navigation}) {
         <ScrollView>
           <Header navigation={navigation} />
           <Popular navigation={navigation} />
+          <ListTrack navigation={navigation} />
+          <ListNewTrack navigation={navigation} />
         </ScrollView>
       </SafeAreaView>
     );

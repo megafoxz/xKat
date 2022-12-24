@@ -22,7 +22,7 @@ const headerStyle = StyleSheet.create({
     fontSize: 15,
   },
   headerSubtitle: {
-    color: COLORS.lightGray,
+    color: COLORS.gray,
     fontSize: 10,
   },
   iconNoti: {
@@ -50,6 +50,35 @@ const popularStyle = StyleSheet.create({
     fontSize: 40,
   },
   headerSubtitle: {
+    color: COLORS.gray,
+    fontSize: 12,
+  },
+  iconNoti: {
+    color: COLORS.white,
+  },
+  iconBell: {
+    marginLeft: 25,
+    color: COLORS.white,
+  },
+  rowPopular: {
+    paddingLeft: 10,
+  },
+});
+
+const topTrack = StyleSheet.create({
+  rowHeader: {
+    display: 'flex',
+    flexDirection: 'column',
+    marginTop: 30,
+    paddingLeft: 20,
+  },
+  rowHeaderLeft: {},
+  headerTitle: {
+    color: COLORS.white,
+    fontWeight: '800',
+    fontSize: 16,
+  },
+  headerSubtitle: {
     color: COLORS.lightGray,
     fontSize: 12,
   },
@@ -65,4 +94,4 @@ const popularStyle = StyleSheet.create({
   },
 });
 
-export {headerStyle, popularStyle};
+export {headerStyle, popularStyle, topTrack};

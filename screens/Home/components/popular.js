@@ -2,17 +2,20 @@ import React, {useState, useEffect} from 'react';
 //Component
 import ScalableText from 'react-native-text';
 import {View} from 'react-native';
-import ListSong from '../../../components/common/listSongCard';
+import ListPlaylist from '../../../components/common/listSongCard';
 
 //Style
 import {popularStyle} from './styles';
 import {icons} from '../../../constants';
 
 //Dump data
-import {popularData} from '../../../dump/popular';
+import popularData from '../../../dump/popular';
 
 export default function popular({navigation}) {
-  useEffect(() => {}, []);
+  const [popular, setPopular] = useState(null);
+  useEffect(() => {
+    setPopular(popularData);
+  }, []);
 
   return (
     // Title
@@ -20,10 +23,10 @@ export default function popular({navigation}) {
       <View style={popularStyle.rowHeader}>
         <View style={popularStyle.rowHeaderLeft}>
           <ScalableText adjustsFontSizeToFit style={popularStyle.headerTitle}>
-            most
+            your
           </ScalableText>
           <ScalableText adjustsFontSizeToFit style={popularStyle.headerTitle}>
-            popular
+            playlist
           </ScalableText>
         </View>
         <ScalableText adjustsFontSizeToFit style={popularStyle.headerSubtitle}>
@@ -32,7 +35,7 @@ export default function popular({navigation}) {
       </View>
       {/* Start Horizontal card */}
       <View style={popularStyle.rowPopular}>
-        <ListSong />
+        <ListPlaylist popular={popularData} />
       </View>
 
       {/* End Horizontal card */}
