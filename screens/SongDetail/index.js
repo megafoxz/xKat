@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {SafeAreaView, ScrollView} from 'react-native';
+import {SafeAreaView, ScrollView, View} from 'react-native';
 
 import {SIZES, images} from '../../constants';
 import {NavigationContainer} from '@react-navigation/native';
@@ -7,14 +7,13 @@ import {FlatList} from 'native-base';
 
 // Component
 import Header from './components/header';
-import Popular from './components/popular';
-import ListTrack from './components/listTrack';
-import ListNewTrack from './components/listNewTrack';
+import Container from './components/container';
 
 //Style
 import {styles} from './styles';
 
-export default function Screen({navigation}) {
+export default function Screen({route, navigation}) {
+  const {item} = route.params;
   const [value, setValue] = useState({
     activeName: 'Home',
   });
@@ -26,13 +25,11 @@ export default function Screen({navigation}) {
   }, []);
 
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView>
+    <SafeAreaView edges={['top', 'left', 'right']} style={styles.container}>
+      <View>
         <Header navigation={navigation} />
-        <Popular navigation={navigation} />
-        <ListTrack navigation={navigation} />
-        <ListNewTrack navigation={navigation} />
-      </ScrollView>
+        <Container data={item} navigation={navigation} />
+      </View>
     </SafeAreaView>
   );
 }

@@ -10,11 +10,9 @@ import {topTrack} from './styles';
 //Dump data
 import trackData from '../../../dump/topTrack';
 
-export default function popular({navigation}) {
+export default function listTrack({navigation}) {
   const [popular, setPopular] = useState(null);
-  useEffect(() => {
-    setPopular(trackData);
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     // Title
@@ -28,7 +26,7 @@ export default function popular({navigation}) {
       </View>
       {/* Start Horizontal card */}
       <View style={topTrack.rowPopular}>
-        <ListTrack tracksData={trackData} />
+        <ListTrack navigation={navigation} tracksData={trackData} />
       </View>
       {/* End Horizontal card */}
     </>

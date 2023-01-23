@@ -1,4 +1,4 @@
-import {Home} from '../screens';
+import {Home, SongDetail} from '../screens';
 
 const screens = [
   {
@@ -6,6 +6,12 @@ const screens = [
     component: Home,
     title: 'Home screen',
     primary: true,
+  },
+  {
+    name: 'SongDetail',
+    component: SongDetail,
+    title: 'SongDetail screen',
+    primary: false,
   },
 ];
 

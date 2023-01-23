@@ -20,7 +20,9 @@ import {COLORS} from '../../constants';
 export default function listSongCard({navigation, tracksData}) {
   const [songCol, setSongCol] = useState(0);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    console.log('-------', navigation);
+  }, []);
 
   return (
     <SafeAreaView>
@@ -32,7 +34,14 @@ export default function listSongCard({navigation, tracksData}) {
           showsHorizontalScrollIndicator={true}
           data={tracksData}
           renderItem={({item, index}) => (
-            <View key={index} style={styles.card}>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('SongDetail', {
+                  item,
+                });
+              }}
+              key={index}
+              style={styles.card}>
               <Image
                 source={{
                   uri: item.bannerImage,
@@ -54,7 +63,7 @@ export default function listSongCard({navigation, tracksData}) {
                   name="plus"
                 />
               </View> */}
-            </View>
+            </TouchableOpacity>
           )}
         />
       </ScrollView>
