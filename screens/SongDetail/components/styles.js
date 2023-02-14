@@ -36,12 +36,35 @@ const headerStyle = StyleSheet.create({
 });
 
 const containerStyle = StyleSheet.create({
+  songPlay: {},
+  songBack: {},
+  songTitle: {
+    fontSize: 22,
+    fontWeight: '700',
+  },
+  songSubtitle: {
+    fontSize: 13,
+  },
+  functionContainer: {},
+  functionBlock: {
+    backgroundColor: COLORS.white58,
+    height: 180,
+    flexDirection: 'column',
+    width: '100%',
+    zIndex: 2,
+    borderRadius: 30,
+    padding: 20,
+  },
   songBackground: {
     height: SIZES.height,
     width: SIZES.width,
     zIndex: 1,
     position: 'absolute',
     backgroundColor: 'rgba(46, 46, 56, 0.59)',
+    display: 'flex',
+    justifyContent: 'flex-end',
+    paddingBottom: 120,
+    paddingHorizontal: 20,
   },
   image: {
     height: SIZES.height,

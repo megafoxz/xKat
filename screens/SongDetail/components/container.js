@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 //Component
 import ScalableText from 'react-native-text';
 import {View, Image} from 'react-native';
+import MiniPlayer from '../../../components/common/MiniPlayer';
 import ListPlaylist from '../../../components/common/listSongCard';
 
 //Style
@@ -16,14 +17,25 @@ export default function SongContainer({data, navigation}) {
   }, []);
 
   return (
-    <View style={containerStyle.songBackground}>
-      <Image
+    <>
+      {/* <Image
         style={containerStyle.image}
         source={{
           uri: data.bannerImage,
         }}
         resizeMode="cover"
-      />
-    </View>
+      /> */}
+      <MiniPlayer></MiniPlayer>
+      <View style={containerStyle.songBackground}>
+        <View style={containerStyle.functionBlock}>
+          <ScalableText style={containerStyle.songTitle}>
+            {data.name}
+          </ScalableText>
+          <ScalableText style={containerStyle.songSubtitle}>
+            {data.artist}
+          </ScalableText>
+        </View>
+      </View>
+    </>
   );
 }

@@ -12,6 +12,8 @@ export const COLORS = {
   lynch: '#6C7A89',
 
   red: '#FF2743',
+
+  white58: 'rgba(250, 250, 250, 0.64)',
 };
 
 export const SIZES = {
